@@ -1,10 +1,10 @@
-import sbt._
+import sbt.*
 
 object Dependencies {
   // Versions
-  lazy val sparkVersion = "3.4.0"
-  lazy val scalatestVersion = "3.2.16"
-  lazy val mockitoScalaScalatestVersion = "1.17.14"
+  lazy val sparkVersion = "3.5.5"
+  lazy val scalatestVersion = "3.2.19"
+  lazy val mockitoScalaScalatestVersion = "1.17.45"
 
   // Libraries
   val spark = "org.apache.spark" %% "spark-sql" % sparkVersion

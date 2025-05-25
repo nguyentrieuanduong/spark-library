@@ -1,14 +1,14 @@
-import Dependencies._
+import Dependencies.*
 
-ThisBuild / scalaVersion := "2.13.10"
+ThisBuild / scalaVersion := "2.13.16"
 ThisBuild / organization := "com.dnta"
 ThisBuild / organizationName := "dnta"
 
 initialize := {
   val _ = initialize.value // run the previous initialization
-  val requiredJdk = "1.8"
+  val requiredJdk = List("1.8", "8", "11", "17")
   val currentJdk = sys.props("java.specification.version")
-  assert(currentJdk == requiredJdk, s"Unsupported JDK: java.specification.version $currentJdk != $requiredJdk")
+  assert(requiredJdk.contains(currentJdk), s"Unsupported JDK: java.specification.version $currentJdk != $requiredJdk")
 }
 
 lazy val root = (project in file("."))
